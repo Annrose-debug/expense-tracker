@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker | Personal Finance</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-chart-line"></i>
+        <h1>Expense Tracker</h1>
+      </div>
+      <p class="subtitle">Track your spending, save more money</p>
+    </header>
+
+    <main>
+      <!-- Stats Section -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="stat-info">
+            <h3>Total Spent</h3>
+            <p class="stat-amount">$<span id="totalAmount">0.00</span></p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-receipt"></i>
+          </div>
+          <div class="stat-info">
+            <h3>Total Expenses</h3>
+            <p class="stat-count"><span id="expenseCount">0</span> items</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Section -->
+      <div class="input-section">
+        <h2><i class="fas fa-plus-circle"></i> Add New Expense</h2>
+        
+        <div class="input-group">
+          <div class="input-field">
+            <label for="expenseName">
+              <i class="fas fa-tag"></i> Expense Name
+            </label>
+            <input 
+              type="text" 
+              id="expenseName" 
+              placeholder="e.g., Groceries, Coffee, Movie..."
+              autocomplete="off"
+            />
+          </div>
+          
+          <div class="input-field">
+            <label for="expenseAmount">
+              <i class="fas fa-dollar-sign"></i> Amount
+            </label>
+            <input 
+              type="number" 
+              id="expenseAmount" 
+              placeholder="0.00"
+              min="0"
+              step="0.01"
+            />
+          </div>
+          
+          <div class="input-field">
+            <label for="expenseCategory">
+              <i class="fas fa-filter"></i> Category
+            </label>
+            <select id="expenseCategory">
+              <option value="food">🍕 Food & Dining</option>
+              <option value="transport">🚗 Transport</option>
+              <option value="shopping">🛍️ Shopping</option>
+              <option value="entertainment">🎬 Entertainment</option>
+              <option value="bills">💡 Bills & Utilities</option>
+              <option value="health">🏥 Health & Wellness</option>
+              <option value="other">📦 Other</option>
+            </select>
+          </div>
+        </div>
+        
+        <button id="addBtn" class="add-btn">
+          <i class="fas fa-plus"></i> Add Expense
+        </button>
+        
+        <div class="input-hints">
+          <p><i class="fas fa-lightbulb"></i> Tip: Press Enter after typing amount to add quickly</p>
+        </div>
+      </div>
+
+      <!-- Expenses List -->
+      <div class="expenses-section">
+        <h2><i class="fas fa-list"></i> Expense History</h2>
+        
+        <div class="expenses-container">
+          <ul id="expenseList">
+           
+          </ul>
+          
+          <div id="emptyState" class="empty-state">
+            <div class="empty-icon">
+              <i class="fas fa-receipt"></i>
+            </div>
+            <h3>No expenses yet</h3>
+            <p>Add your first expense to start tracking your spending!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Expenses are saved automatically in your browser</p>
+      <button id="clearAllBtn" class="clear-btn">
+        <i class="fas fa-trash-alt"></i> Clear All Expenses
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
